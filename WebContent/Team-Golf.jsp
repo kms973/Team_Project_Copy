@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 
 <html>
@@ -14,12 +14,6 @@
     .hd-nav { }
 	.hd-nav ul li a { font-weight: bold; font-size: 16px; }
 
-        table {
-            border-collapse: collapse;
-            width: 700px; /* 전체 표 너비 수정 */
-            margin: 130px auto; /* 가운데 정렬 */
-        }
-        
     footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background: #ccc; }
     </style>
 </head>
@@ -62,32 +56,7 @@
         </nav>
     </header>
     <main>
-        <table width="500" border="1">
-      
-      <tr>
-      <td>수강월</td>
-      <td>회원번호</td>
-      <td>회원명</td>
-      <td>강의명</td>
-      <td>강의장소</td>
-      <td>수강료</td>
-      <td>등급</td>
-      
-      </tr>
-
-      <c:forEach var="dto" items="${searchMemberInfo}">
-         <tr>
-            <td>${dto.registMonth}</td>
-            <td>${dto.cno}</td>
-            <td>${dto.cname}</td>
-            <td>${dto.className}</td>
-            <td>${dto.classArea}</td>
-            <td>${dto.classPrice}</td>
-            <td>${dto.grade}</td>
-         </tr>
-      </c:forEach>
-   
-   </table>
+        <!-- 각각의 정보를 출력할 공간 -->
     </main>
     <footer class="mt-5 py-3 text-center">
         <p>HRDKOREA Copyright@ 2015 All rights reserved.

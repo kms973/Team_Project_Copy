@@ -124,7 +124,8 @@ public class VoteDAO {
 				String voteTime = rs.getString("VOTE_TIME");
 				String voterInspect = rs.getString("VOTER_INSPECT");
 
-				VoteInspectDTO voteInspectDto = new VoteInspectDTO(vName, birthday, age, gender, voteNumber, voteTime, voterInspect);
+				VoteInspectDTO voteInspectDto = new VoteInspectDTO(vName, birthday, age, gender, voteNumber, voteTime,
+						voterInspect);
 				dtos.add(voteInspectDto);
 			}
 		} catch (Exception e) {
@@ -144,53 +145,91 @@ public class VoteDAO {
 
 		return dtos;
 	}
-	
-	// 투표-후보자등수
-		public List<VoteRankDTO> voteRank() {
-			ArrayList<VoteRankDTO> dtos = new ArrayList<>();
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
 
+	// 투표-후보자등수
+	public List<VoteRankDTO> voteRank() {
+		ArrayList<VoteRankDTO> dtos = new ArrayList<>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			String query = "select d.M_NO AS M_NO, d.M_NAME AS M_NAME, count(d.\"M_NO\") as COUNT\r\n"
+					+ "from tbl_vote_202005 a, TBL_MEMBER_202005 d\r\n" + "where a.M_NO=d.M_NO\r\n"
+					+ "group by d.M_NAME, d.M_NO\r\n" + "order by COUNT desc";
+
+			con = datasource.getConnection();
+
+			pstmt = con.prepareStatement(query);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				int mno = rs.getInt("M_NO");
+				String mName = rs.getString("M_NAME");
+				int count = rs.getInt("COUNT");
+
+				VoteRankDTO voteRankDto = new VoteRankDTO(mno, mName, count);
+				dtos.add(voteRankDto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+		return dtos;
+	}
+
+	public void vote(String vJumin, String vName, String mno, String vTime, String vArea, String vConfirm) {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		try {
+
+			String query = "insert into tbl_vote_202005 (v_jumin, v_name, m_no, v_time, v_area, v_confirm)\r\n"
+					+ "values(?,?,?,?,?,?)";
+
+			con = datasource.getConnection();
+
+			pstmt = con.prepareStatement(query);
+
+			pstmt.setString(1, vJumin);
+			pstmt.setString(2, vName);
+			pstmt.setString(3, mno);
+			pstmt.setString(4, vTime);
+			pstmt.setString(5, vArea);
+			pstmt.setString(6, vConfirm);
+			
+			pstmt.executeUpdate();
+
+//				int rn = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
 			try {
 
-				String query = "select d.M_NO AS M_NO, d.M_NAME AS M_NAME, count(d.\"M_NO\") as COUNT\r\n" + 
-						"from tbl_vote_202005 a, TBL_MEMBER_202005 d\r\n" + 
-						"where a.M_NO=d.M_NO\r\n" + 
-						"group by d.M_NAME, d.M_NO\r\n" + 
-						"order by COUNT desc";
-
-				con = datasource.getConnection();
-
-				pstmt = con.prepareStatement(query);
-
-				rs = pstmt.executeQuery();
-
-				while (rs.next()) {
-					
-					int mno = rs.getInt("M_NO");
-					String mName = rs.getString("M_NAME");
-					int count = rs.getInt("COUNT");
-					
-
-					VoteRankDTO voteRankDto = new VoteRankDTO(mno, mName, count);
-					dtos.add(voteRankDto);
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (rs != null)
-						rs.close();
-					if (pstmt != null)
-						pstmt.close();
-					if (con != null)
-						con.close();
-				} catch (Exception e2) {
-					e2.printStackTrace();
-				}
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
 			}
-
-			return dtos;
 		}
+
+	}
 }
