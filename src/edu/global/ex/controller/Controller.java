@@ -113,12 +113,12 @@ public class Controller extends HttpServlet {
 			command = new CreateMemberCommand();
 			command.execute(request, response);
 
-			viewPage = "CustList.jsp";
+			viewPage = "index.jsp";
 		} else if (com.equals("/vote.do")) { // 투표
 			command = new VoteCommand();
 			command.execute(request, response);
 
-			viewPage = "CustList.jsp";
+			viewPage = "index.jsp";
 		} else if (com.equals("/creatememberform.do")) { // 회원생성페이지
 			command = new VoteCommand();
 			command.execute(request, response);
@@ -129,6 +129,36 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 
 			viewPage = "VoteForm.jsp";
+		} else if (com.equals("/teamgamemainpage.do")) { // 페이지이동
+
+//			command.execute(request, response);
+
+			viewPage = "Team-Game-Mainpage.jsp";
+		} else if (com.equals("/teamvote.do")) { // 페이지이동
+
+//			command.execute(request, response);
+
+			viewPage = "Team-Vote.jsp";
+		} else if (com.equals("/teamhomeshopping.do")) { // 페이지이동
+
+//			command.execute(request, response);
+
+			viewPage = "Team-Homeshopping.jsp";
+		} else if (com.equals("/teamgolf.do")) { // 페이지이동
+
+//			command.execute(request, response);
+
+			viewPage = "Team-Golf.jsp";
+		} else if (com.equals("/teamlotto.do")) { // 페이지이동
+
+//			command.execute(request, response);
+
+			viewPage = "Team-Lotto.jsp";
+		} else if (com.equals("/teamrsp.do")) { // 페이지이동
+
+//			command.execute(request, response);
+
+			viewPage = "Team-Rsp.jsp";
 		}
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);

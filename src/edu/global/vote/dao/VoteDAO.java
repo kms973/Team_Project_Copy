@@ -213,10 +213,10 @@ public class VoteDAO {
 			pstmt.setString(5, vArea);
 			pstmt.setString(6, vConfirm);
 			
-			pstmt.executeUpdate();
+			//pstmt.executeUpdate();
 
-//				int rn = pstmt.executeUpdate();
-
+				int rn = pstmt.executeUpdate();
+				System.out.println(rn);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

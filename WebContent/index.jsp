@@ -18,45 +18,45 @@
  <header>
 	<!-- 내비게이션 바 -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	    <a class="navbar-brand" href="index.jsp">메인페이지</a>
+	    <a class="navbar-brand" href="list.do">메인페이지</a>
 	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
 	        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="navbar-toggler-icon"></span>
 	    </button>
 	    <div class="collapse navbar-collapse hd-nav" id="navbarNav">
 	        <ul class="navbar-nav ml-auto">
-	            <li class="nav-item"><a class="nav-link" href="Team-Game-Mainpage.jsp">게임사이트</a></li>
-	            <li class="nav-item"><a class="nav-link" href="Team-Vote.jsp">투표</a></li>
-	            <li class="nav-item"><a class="nav-link" href="Team-Homeshopping.jsp">홈쇼핑</a></li>
-	            <li class="nav-item"><a class="nav-link" href="Team-Golf.jsp">골프연습장 회원관리</a></li>
+	            <li class="nav-item"><a class="nav-link" href="teamgamemainpage.do">게임사이트</a></li>
+	            <li class="nav-item"><a class="nav-link" href="teamvote.do">투표</a></li>
+	            <li class="nav-item"><a class="nav-link" href="teamhomeshopping.do">홈쇼핑</a></li>
+	            <li class="nav-item"><a class="nav-link" href="teamgolf.do">골프연습장 회원관리</a></li>
 	        </ul>
 	    </div>
 	</nav>
 </header>
     <main>
         <div class="img_box d-flex w-75 justify-content-between">
-            <form action="Team-Game-Mainpage.jsp">
+            <form action="teamgamemainpage.do">
                 <button type="submit" class="clickable-image1">
                     <img src="./Img-Folder/game.png" width="180" height="180">
                 </button>
             </form>
 
             <!-- 두 번째 이미지와 링크 -->
-            <form action="Team-Vote.jsp">
+            <form action="teamvote.do">
                 <button type="submit" class="clickable-image2">
                     <img src="./Img-Folder/vote.png" width="280" height="180">
                 </button>
             </form>
 
             <!-- 세 번째 이미지와 링크 -->
-            <form action="Team-Homeshopping.jsp">
+            <form action="teamhomeshopping.do">
                 <button type="submit" class="clickable-image3">
                     <img src="./Img-Folder/shopping.png" width="180" height="180">
                 </button>
             </form>
 
             <!-- 네 번째 이미지와 링크 -->
-            <form action="Team-Golf.jsp">
+            <form action="teamgolf.do">
                 <button type="submit" class="clickable-image4">
                     <img src="./Img-Folder/golf.png" width="280" height="180">
                 </button>

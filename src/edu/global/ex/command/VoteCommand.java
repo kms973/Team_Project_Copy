@@ -32,7 +32,6 @@ public class VoteCommand implements BoardCommand {
 		String vConfirm = request.getParameter("vConfirm");
 
 		VoteDAO voteDao = new VoteDAO();
-		
 		voteDao.vote(vJumin, vName, mno, vTime, vArea, vConfirm);
 
 //	      List<MemberSalDTO> dtos = shopDao.memberSal();

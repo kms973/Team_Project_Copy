@@ -9,8 +9,7 @@
     <!-- 부트스트랩 CDN 링크 추가 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-    .hd-nav { }
-	.hd-nav ul li a { font-weight: bold; font-size: 16px; }
+    
 
         table {
             border-collapse: collapse;
@@ -18,14 +17,14 @@
             margin: 130px auto; /* 가운데 정렬 */
         }
         
-    footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background: #ccc; }
+   
     </style>
 </head>
 <body>
     <header>
         <!-- 내비게이션 바 -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="Team-Vote.jsp">투표</a>
+            <a class="navbar-brand" href="teamvote.do">투표</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,7 +48,7 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.jsp">홈으로</a>
+                        <a class="nav-link" href="list.do">홈으로</a>
                     </li>
                 </ul>
                 

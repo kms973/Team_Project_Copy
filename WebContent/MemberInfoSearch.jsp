@@ -31,7 +31,7 @@
             <div class="container-fluid">
                 <!-- 수정: 로고를 클릭하면 홈 페이지로 이동 -->
 
-            <a class="navbar-brand" href="Team-Golf.jsp">골프연습장 회원관리 프로그램</a>
+            <a class="navbar-brand" href="teamgolf.do">골프연습장 회원관리 프로그램</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.jsp">홈으로</a>
+                        <a class="nav-link" href="list.do">홈으로</a>
                     </li>
                 </ul>
                 
