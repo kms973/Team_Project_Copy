@@ -12,16 +12,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
     .hd-nav { }
-	.hd-nav ul li a { font-weight: bold; font-size: 16px; }
+   .hd-nav ul li a { font-weight: bold; font-size: 16px; }
 
     footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background: #ccc; }
+      #image-container {
+      width: 100%;
+      height: 600px;
+      
+      }   
     </style>
 </head>
 <body>
     <header>
         <!-- 내비게이션 바 -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="teamhomeshopping.do">홈쇼핑</a>
+            <a class="navbar-brand" href="Team-Homeshopping.jsp">홈쇼핑</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,12 +48,7 @@
                         <a class="nav-link" href="custlist.do">회원목록조회</a>
                         </form>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="list.do">홈으로</a>
                     </li>
@@ -58,11 +58,12 @@
         </nav>
     </header>
     <main>
-        <!-- 각각의 정보를 출력할 공간 -->
+       <div id="center">
+            <img id="image-container" src="./Img-Folder/homeshopping2.png" alt="My Image">
+         </div>
     </main>
     <footer class="mt-5 py-3 text-center">
-        <p>HRDKOREA Copyright@ 2015 All rights reserved.
-            Human Resources Development Service of Korea</p>
+        <p>Address: 123 Main Street, City, Country</p>
     </footer>
     <!-- 부트스트랩과 관련된 스크립트 파일 링크 추가 -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

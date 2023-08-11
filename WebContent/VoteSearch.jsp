@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
     .hd-nav { }
-	.hd-nav ul li a { font-weight: bold; font-size: 16px; }
+   .hd-nav ul li a { font-weight: bold; font-size: 16px; }
 
         table {
             border-collapse: collapse;
@@ -25,14 +25,18 @@
     <header>
         <!-- 내비게이션 바 -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="teamvote.do">투표</a>
+            <a class="navbar-brand" href="Team-Vote.jsp">투표</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse hd-nav" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-
+               <li class="nav-item">
+                        <form action="voteform.do">
+                            <a class="nav-link" href="voteform.do">투표하기</a>
+                        </form>
+                    </li>
                     <li class="nav-item">
                         <form action="votesearch.do">
                             <a class="nav-link" href="votesearch.do">투표 검색</a>
@@ -49,7 +53,7 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="list.do">홈으로</a>
+                        <a class="nav-link" href="index.jsp">홈으로</a>
                     </li>
                 </ul>
                 
@@ -85,8 +89,7 @@
    </table>
     </main>
     <footer class="mt-5 py-3 text-center">
-        <p>HRDKOREA Copyright@ 2015 All rights reserved.
-            Human Resources Development Service of Korea</p>
+        <p>Address: 123 Main Street, City, Country</p>
     </footer>
     <!-- 부트스트랩과 관련된 스크립트 파일 링크 추가 -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -6,94 +6,111 @@
 
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <meta charset="UTF-8">
-  <title>홈쇼핑</title>
-    <!-- 부트스트랩 CDN 링크 추가 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-    .hd-nav { }
-	.hd-nav ul li a { font-weight: bold; font-size: 16px; }
+<title>홈쇼핑</title>
+<!-- 부트스트랩 CDN 링크 추가 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+.hd-nav {
+	
+}
 
-        table {
-            border-collapse: collapse;
-            width: 700px; /* 전체 표 너비 수정 */
-            margin: 130px auto; /* 가운데 정렬 */
-        }
-        
-    footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background: #ccc; }
-    </style>
+.hd-nav ul li a {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 700px; /* 전체 표 너비 수정 */
+	margin: 130px auto; /* 가운데 정렬 */
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background: #ccc;
+}
+</style>
 </head>
 <body>
-    <header>
-        <!-- 내비게이션 바 -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="teamhomeshopping.do">홈쇼핑</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse hd-nav" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                     <form action="membersal.do">
-                        <a class="nav-link" href="membersal.do">회원매출조회</a>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                     <form action="custlist.do">
-                        <a class="nav-link" href="custlist.do">회원목록조회</a>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="list.do">홈으로</a>
-                    </li>
-                </ul>
-                
-            </div>
-        </nav>
-    </header>
-    <main>
-       <table width="500" border="1">
-      <tr>
-      <td>회원번호</td>
-      <td>회원성명</td>
-      <td>전화번호</td>
-      <td>주소</td>
-      <td>가입일자</td>
-      <td>고객등급</td>
-      <td>거주지역</td>
-     
-      
-      </tr>
+	<header>
+		<!-- 내비게이션 바 -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="teamhomeshopping.do">홈쇼핑</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse hd-nav" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<form action="creatememberform.do">
+							<a class="nav-link" href="creatememberform.do">회원생성</a>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form action="membersal.do">
+							<a class="nav-link" href="membersal.do">회원매출조회</a>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form action="custlist.do">
+							<a class="nav-link" href="custlist.do">회원목록조회</a>
+						</form>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#"></a></li>
+					<li class="nav-item"><a class="nav-link" href="#"></a></li>
+					<li class="nav-item"><a class="nav-link" href="list.do">홈으로</a>
+					</li>
+				</ul>
 
-      <c:forEach var="dto" items="${custList}">
-         <tr>
-            <td>${dto.custNo}</td>
-            <td>${dto.custName}</td>
-            <td>${dto.phone}</td>
-            <td>${dto.address}</td>
-            <td>${dto.joinDate}</td>
-            <td>${dto.custGrade}</td>
-            <td>${dto.city}</td>
-         </tr>
-      </c:forEach>
-   
-   </table>
-    </main>
-    <footer class="mt-5 py-3 text-center">
-        <p>HRDKOREA Copyright@ 2015 All rights reserved.
-            Human Resources Development Service of Korea</p>
-    </footer>
-    <!-- 부트스트랩과 관련된 스크립트 파일 링크 추가 -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<table width="500" border="1">
+			<tr>
+				<td>회원번호</td>
+				<td>회원성명</td>
+				<td>전화번호</td>
+				<td>주소</td>
+				<td>가입일자</td>
+				<td>고객등급</td>
+				<td>거주지역</td>
+
+
+			</tr>
+
+			<c:forEach var="dto" items="${custList}">
+				<tr>
+					<td>${dto.custNo}</td>
+					<td>${dto.custName}</td>
+					<td>${dto.phone}</td>
+					<td>${dto.address}</td>
+					<td>${dto.joinDate}</td>
+					<td>${dto.custGrade}</td>
+					<td>${dto.city}</td>
+				</tr>
+			</c:forEach>
+
+		</table>
+	</main>
+	<footer class="mt-5 py-3 text-center">
+		<p>Address: 123 Main Street, City, Country</p>
+	</footer>
+	<!-- 부트스트랩과 관련된 스크립트 파일 링크 추가 -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

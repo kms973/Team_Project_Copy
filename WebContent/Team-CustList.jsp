@@ -77,8 +77,7 @@
    </table>
     </main>
     <footer class="mt-5 py-3 text-center">
-        <p>HRDKOREA Copyright@ 2015 All rights reserved.
-            Human Resources Development Service of Korea</p>
+        <p>Address: 123 Main Street, City, Country</p>
     </footer>
     <!-- 부트스트랩과 관련된 스크립트 파일 링크 추가 -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
